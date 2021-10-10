@@ -4,15 +4,18 @@ public class TestMaximum <E extends Comparable<E>>{
     E secondValue;
     E thirdValue;
     E[] moreParameters;
+    
     public TestMaximum(E firstValue, E secondValue, E thirdValue, E... moreParameters){
           this.firstValue = firstValue;
           this.secondValue = secondValue;
           this.thirdValue = thirdValue;
           this.moreParameters= moreParameters;
     }
+    
     public E findMaximum(){
           return TestMaximum.findMaximum(firstValue,secondValue,thirdValue,moreParameters);
     }
+    
     public static  < E extends Comparable<E> > E findMaximum(E firstValue, E secondValue, E thirdValue,E... moreParameters){
           E maximum = firstValue;
           if ( secondValue.compareTo(maximum) > 0 ){
@@ -28,6 +31,11 @@ public class TestMaximum <E extends Comparable<E>>{
                       }
                 }
           }
+          printMax(maximum);
           return maximum;
+    }
+    
+    public static <E extends Comparable<E>> void printMax(E maximum){
+          System.out.println("Maximum value is :"+maximum);
     }
 }
