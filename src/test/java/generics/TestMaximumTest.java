@@ -54,4 +54,22 @@ public class TestMaximumTest {
             TestMaximum testMaximum = new TestMaximum("Apple","Banana","Peach");
             Assert.assertEquals("Peach",testMaximum.findMaximum());
       }
+
+      @Test
+      public void givenMoreIntegerValues_WhenGreater_ShouldReturnTrue() {
+            TestMaximum testMaximum = new TestMaximum(100,20,30,80,55,71);
+            Assert.assertEquals(100,testMaximum.findMaximum());
+      }
+
+      @Test
+      public void givenMoreFloatValues_WhenGreater_ShouldReturnTrue() {
+            TestMaximum testMaximum = new TestMaximum(100.2f,20.4f,30.5f,45.5f,63.2f);
+            Assert.assertEquals(100.2f,testMaximum.findMaximum());
+      }
+
+      @Test
+      public void givenMoreStringValues_WhenGreater_ShouldReturnTrue() {
+            TestMaximum testMaximum = new TestMaximum("Apple","Banana","Peach","Grapes","Oranges");
+            Assert.assertEquals("Peach",testMaximum.findMaximum());
+      }
 }
