@@ -1,27 +1,25 @@
 package generics;
 
-public class TestMaximum {
-      Integer firstInteger;
-      Integer secondInteger;
-      Integer thirdInteger;
-      
-      public TestMaximum(Integer firstInteger, Integer secondInteger, Integer thirdInteger){
-      this.firstInteger = firstInteger;
-      this.secondInteger = secondInteger;
-      this.thirdInteger = thirdInteger;
+public class TestMaximum <E extends Comparable<E>>{
+      E firstValue;
+      E secondValue;
+      E thirdValue;
+      public TestMaximum(E firstValue, E secondValue, E thirdValue){
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
       }
-      /**
-       * to find the max integer out of given 3 integers
-       * @return maximum
-       */
-      public int findMaximum(){
-          Integer maximum = firstInteger;
-          if ( secondInteger.compareTo(maximum) > 0 ){
-                maximum = secondInteger;
-          }
-          if ( thirdInteger.compareTo(maximum) > 0){
-                maximum = thirdInteger;
-          }
-          return maximum;
+      public E findMaximum(){
+            return TestMaximum.findMaximum(firstValue,secondValue,thirdValue);
+      }
+      public static  < E extends Comparable <E> > E findMaximum(E firstValue, E secondValue, E thirdValue){
+            E maximum = firstValue;
+            if ( secondValue.compareTo(maximum) > 0 ){
+                  maximum = secondValue;
+            }
+            if ( thirdValue.compareTo(maximum) > 0 ){
+                  maximum = thirdValue;
+            }
+            return maximum;
       }
 }
